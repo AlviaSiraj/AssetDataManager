@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# React Electron Data Table Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based data table management application with Electron integration. It allows users to upload Excel data files and interact with the data in a dynamic, user-friendly table interface. Users can effortlessly add, view, edit, delete, and export their data, with additional features like pagination, search functionality, and duplicate entry validation for enhanced data management. Made for those who find it difficult to deal with data.
 
-## Available Scripts
+This app is currently being tested by external users, and features are continuously being added and improved.
 
-In the project directory, you can run:
+## Technology Used
 
-### `yarn start`
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React" width="21px" height="21px"></a> <a href="https://www.electronjs.org/" title="Electron"><img src="https://github.com/get-icon/geticon/raw/master/icons/electron.svg" alt="Electron" width="21px" height="21px"></a> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" title="HTML5"><img src="https://github.com/get-icon/geticon/raw/master/icons/html-5.svg" alt="HTML5" width="21px" height="21px"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS3"><img src="https://github.com/get-icon/geticon/raw/master/icons/css-3.svg" alt="CSS3" width="21px" height="21px"></a>
+<a href="https://nodejs.org/" title="Node.js"><img src="https://github.com/get-icon/geticon/raw/master/icons/nodejs-icon.svg" alt="Node.js" width="21px" height="21px"></a> <a href="https://yarnpkg.com/" title="Yarn"><img src="https://github.com/get-icon/geticon/raw/master/icons/yarn.svg" alt="Yarn" width="21px" height="21px"></a>
+<a href="https://code.visualstudio.com/" title="Visual Studio Code"><img src="https://github.com/get-icon/geticon/raw/master/icons/visual-studio-code.svg" alt="Visual Studio Code" width="21px" height="21px"></a>
+<a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="21px" height="21px"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Data Management: Add, edit, and delete table records dynamically.
+- Search: Filter table data using a search query.
+- Pagination: Navigate through data in pages.
+- Duplicate Validation: Check for duplicate entries during editing or adding new records.
+- Export: Export table data to an Excel file.
+- Email: User can email their search results to whomever
+- Electron Integration: Save and load data through the Electron backend.
 
-### `yarn test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
 
-### `yarn build`
+```bash
+git clone https://github.com/AlviaSiraj/DataTableManagement.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies using yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Build the app for production
 
-### `yarn eject`
+```bash
+yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+yarn electron-start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### To package app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After building the app, run
 
-## Learn More
+```bash
+yarn package
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+the app will then be created in your /dist folder
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Conclusion
 
-### Code Splitting
+This React-based data table management application, integrated with Electron, offers a comprehensive solution for handling and visualizing Excel data files. With features like adding, editing, searching, exporting data, and ensuring duplicate validation, it provides a user-friendly and efficient experience for managing data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with modern technologies like React, Electron, and Node.js, the application emphasizes functionality, performance, and simplicity. I hope this project demonstrates the power of combining these technologies to create versatile and effective tools.

@@ -1,21 +1,66 @@
 {
   "name": "asset-tracker",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
+  "description": "An asset tracking application built with React and Electron.",
+  "author": "Your Name <your.email@example.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "concurrently": "^9.1.2",
+    "electron-store": "^10.0.0",
+    "emailjs-com": "^3.2.0",
+    "path-browserify": "^1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "main": "./main.mjs",
+  "build": {
+    "extends": null,
+    "appId": "com.example.asset-tracker",
+    "productName": "Asset Tracker",
+    "files": [
+      "build/**/*",
+      "main.mjs",
+      "preload.js",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "${productName} Setup ${version}.${ext}"
+    },
+    "extraResources": [
+      {
+        "from": "node_modules/electron/dist/ffmpeg.dll",
+        "to": "./"
+      }
+    ],
+    "extraMetadata": {
+      "main": "main.mjs"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "electron-start": "cross-env NODE_ENV=production electron main.mjs",
+    "electron-dev": "concurrently \"yarn start\" \"yarn electron-start\"",
+    "package": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +79,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8"
   }
 }

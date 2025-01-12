@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #ffff; /* Replace with your desired color */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App-footer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ddd;
 }

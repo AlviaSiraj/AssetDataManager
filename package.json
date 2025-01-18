@@ -1,10 +1,10 @@
 {
   "name": "asset-tracker",
   "homepage": "./",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "An asset tracking application built with React and Electron.",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Alvia Siraj",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -44,6 +44,14 @@
         "nsis"
       ],
       "artifactName": "${productName} Setup ${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/icon.ico",
+      "uninstallerIcon": "public/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     },
     "extraResources": [
       {

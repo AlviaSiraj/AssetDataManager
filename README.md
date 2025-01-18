@@ -58,6 +58,15 @@ yarn package
 
 the app will then be created in your /dist folder
 
+### Version 0.1.0
+
+- App created, with basic features
+- in the testing phase, more features will be added per request
+
+### Version 0.1.1
+
+- Users can chose where they want their application Installed
+
 ## Conclusion
 
 This React-based data table management application, integrated with Electron, offers a comprehensive solution for handling and visualizing Excel data files. With features like adding, editing, searching, exporting data, and ensuring duplicate validation, it provides a user-friendly and efficient experience for managing data.

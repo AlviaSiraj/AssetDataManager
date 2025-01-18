@@ -25,7 +25,7 @@ const DisplayTable = () => {
 
   // adding pagination:
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10); // Show 10 entries per page
+  const [pageSize, setPageSize] = useState(30); // Show 10 entries per page
 
   useEffect(() => {
     const refreshData = async () => {
@@ -287,7 +287,7 @@ const DisplayTable = () => {
           />{" "}
         </div>
         <button className="addButton" onClick={() => handleModal()}>
-          Add Entry
+          Add Entryssssssss
         </button>
       </div>
       <table className="displayTable">

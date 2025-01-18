@@ -11,8 +11,6 @@ const preloadPath = app.isPackaged
   ? path.join(app.getAppPath(), "preload.js")
   : path.join(__dirname, "preload.js");
 
-console.log("Preload path:", preloadPath); // Add this log to debug the preload path
-
 // Initialize Electron Store
 const store = new Store();
 
@@ -66,7 +64,6 @@ ipcMain.handle("check-file-existence", (event, filePath) => {
 
 ipcMain.handle("save-data", (_, fileName, data, fileDate) => {
   try {
-    console.log("save data");
     const currData = store.get("userData", { files: [] });
     const existingFileIndex = currData.files.findIndex(
       (file) => file.fileName === fileName

@@ -66,6 +66,7 @@ the app will then be created in your /dist folder
 ### Version 0.1.1
 
 - Users can chose where they want their application Installed
+- Users can now filter their search by header
 
 ## Conclusion
 

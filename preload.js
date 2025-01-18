@@ -9,5 +9,3 @@ contextBridge.exposeInMainWorld("electron", {
   deleteData: (fileName) => ipcRenderer.invoke("delete-data", fileName),
   clearData: () => ipcRenderer.invoke("clear-data"),
 });
-
-console.log("Preload script loaded!");

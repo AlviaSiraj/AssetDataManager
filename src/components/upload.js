@@ -40,7 +40,6 @@ const Upload = ({ onFileUpload }) => {
     }
 
     try {
-      console.log("Uploading file:", file);
       const XLSX = require("xlsx");
       const reader = new FileReader();
       reader.onload = async (e) => {
@@ -48,7 +47,6 @@ const Upload = ({ onFileUpload }) => {
         const workbook = XLSX.read(binaryString, { type: "binary" });
         const sheetName = workbook.SheetNames[0];
         const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-        console.log("checkking window electron");
 
         // Save the data persistently using Electron's IPC
         const response = await window.electron.saveData(
@@ -56,7 +54,6 @@ const Upload = ({ onFileUpload }) => {
           jsonData,
           fileDate
         );
-        console.log("response", response);
         if (response.success) {
           onFileUpload(); // Trigger the callback only if saving is successful
           setNotification({

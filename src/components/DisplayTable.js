@@ -11,6 +11,7 @@ emailjs.init("a4ZlKjp7je6HisFdG");
 const DisplayTable = () => {
   const location = useLocation();
   const { fileName, fileDate, fileData } = location.state || {}; //get passed data
+  const [selectedFields, setSelectedFields] = useState("All Fields"); // Track selected field
   const [searchQuery, setSearchQuery] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false); // State for edit modal
@@ -25,7 +26,7 @@ const DisplayTable = () => {
 
   // adding pagination:
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10); // Show 10 entries per page
+  const [pageSize, setPageSize] = useState(30); // Show 10 entries per page
 
   useEffect(() => {
     const refreshData = async () => {
@@ -66,11 +67,23 @@ const DisplayTable = () => {
   const headers = fileData?.length ? Object.keys(fileData[0]) : [];
 
   // Filter rows based on the search query
-  const filteredData = data.filter((row) =>
-    headers.some((header) =>
-      row[header]?.toString().toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
+  const filteredData = data.filter((row) => {
+    if (selectedFields === "All Fields") {
+      // Search across all fields
+      return headers.some((header) =>
+        row[header]
+          ?.toString()
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      );
+    } else {
+      // Search only within the selected field
+      return row[selectedFields]
+        ?.toString()
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+    }
+  });
 
   // Paginate the filtered data
   const startIndex = (currentPage - 1) * pageSize;
@@ -79,7 +92,6 @@ const DisplayTable = () => {
   //Open Add Entry Modal
   const handleModal = () => {
     setShowModal(true);
-    console.log("Add Entry Modal");
   };
 
   const handleAddEntry = (newEntry, uniqueFields) => {
@@ -285,6 +297,17 @@ const DisplayTable = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="search-box"
           />{" "}
+          <select
+            value={selectedFields}
+            onChange={(e) => setSelectedFields(e.target.value)}
+          >
+            <option value="All Fields">All Fields</option>
+            {headers.map((header, index) => (
+              <option key={index} value={header}>
+                {header}
+              </option>
+            ))}
+          </select>
         </div>
         <button className="addButton" onClick={() => handleModal()}>
           Add Entry

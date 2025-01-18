@@ -66,7 +66,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "electron-start": "cross-env NODE_ENV=production electron main.mjs",
+    "electron-start": "cross-env NODE_ENV=development electron main.mjs",
     "electron-dev": "concurrently \"yarn start\" \"yarn electron-start\"",
     "package": "electron-builder"
   },
